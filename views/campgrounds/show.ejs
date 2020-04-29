@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">
+				YelpCamp
+			</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			 <div class="thumbnail">
+				 <img class="img-responsive" src="<%= campground.image %>">
+				 <div class="caption-full">
+					 <h4 class="pull-right">$<%= campground.price %>/night</h4>
+					 <h4><a><%= campground.name %></a></h4>
+					 <p>
+	 <%= campground.description %>
+</p>
+					 <p>
+						 <em>Submitted By <%= campground.author %> </em>
+					 </p>
+					 
+					 <a class="btn btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit Campground</a>
+					 <form id="delete-form" action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST">
+						 <button class="btn btn-danger">
+							 Delete Campground
+						 </button>
+					 </form>
+					 
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
